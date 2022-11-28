@@ -1,0 +1,15 @@
+\contentsline {chapter}{\numberline {1}File Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}File List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}File Documentation}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}src/main.cpp File Reference}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Function Documentation}{3}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}loop()}{4}{subsubsection.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.2}setup()}{4}{subsubsection.2.1.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Variable Documentation}{5}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}bandera}{5}{subsubsection.2.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.2.2}buttom}{5}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.3}cont}{5}{subsubsection.2.1.2.3}
+\contentsline {subsubsection}{\numberline {2.1.2.4}green}{5}{subsubsection.2.1.2.4}
+\contentsline {subsubsection}{\numberline {2.1.2.5}red}{5}{subsubsection.2.1.2.5}
+\contentsline {subsubsection}{\numberline {2.1.2.6}rx}{5}{subsubsection.2.1.2.6}
+\contentsline {subsubsection}{\numberline {2.1.2.7}yellow}{5}{subsubsection.2.1.2.7}

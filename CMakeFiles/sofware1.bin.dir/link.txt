@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/sofware1.bin.dir/src/main.cpp.o CMakeFiles/sofware1.bin.dir/src/participant.cpp.o CMakeFiles/sofware1.bin.dir/src/config_tty.cpp.o -o sofware1.bin 
