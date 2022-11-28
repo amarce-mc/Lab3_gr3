@@ -1,0 +1,182 @@
+\hypertarget{tty__lib2_8h}{}\section{include/tty\+\_\+lib2.h File Reference}
+\label{tty__lib2_8h}\index{include/tty\+\_\+lib2.\+h@{include/tty\+\_\+lib2.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tty__lib2_8h_af4b26b32c3c509fa307419652482c659}{config\+\_\+tty} (const char $\ast$tty\+\_\+port, struct termios $\ast$tty, unsigned int baud, int $\ast$serial\+\_\+port)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tty__lib2_8h_af4b26b32c3c509fa307419652482c659}\label{tty__lib2_8h_af4b26b32c3c509fa307419652482c659}} 
+\index{tty\+\_\+lib2.\+h@{tty\+\_\+lib2.\+h}!config\+\_\+tty@{config\+\_\+tty}}
+\index{config\+\_\+tty@{config\+\_\+tty}!tty\+\_\+lib2.\+h@{tty\+\_\+lib2.\+h}}
+\subsubsection{\texorpdfstring{config\+\_\+tty()}{config\_tty()}}
+{\footnotesize\ttfamily void config\+\_\+tty (\begin{DoxyParamCaption}\item[{const char $\ast$}]{tty\+\_\+port,  }\item[{struct termios $\ast$}]{tty,  }\item[{unsigned int}]{baud,  }\item[{int $\ast$}]{serial\+\_\+port }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file config\+\_\+tty.\+cpp.
+
+
+\begin{DoxyCode}
+9 \{
+10     
+11     *serial\_port = open(tty\_port, O\_RDWR);
+12 
+13     \textcolor{comment}{// Check for errors}
+14     \textcolor{keywordflow}{if} (*serial\_port < 0) \{
+15         printf(\textcolor{stringliteral}{"Error %i from open: %s\(\backslash\)n"}, errno, strerror(errno));
+16     \}
+17     
+18     
+19     \textcolor{comment}{// Create new termios struct, we call it 'tty' for convention}
+20     \textcolor{comment}{// No need for "= \{0\}" at the end as we'll immediately write the existing}
+21     \textcolor{comment}{// config to this struct}
+22     \textcolor{comment}{//struct termios tty;//no needed here as is received in function argument }
+23 
+24     \textcolor{comment}{// Read in existing settings, and handle any error}
+25     \textcolor{comment}{// NOTE: This is important! POSIX states that the struct passed to tcsetattr()}
+26     \textcolor{comment}{// must have been initialized with a call to tcgetattr() overwise behaviour}
+27     \textcolor{comment}{// is undefined}
+28     \textcolor{keywordflow}{if}(tcgetattr(*serial\_port, tty) != 0) \{
+29         printf(\textcolor{stringliteral}{"Error %i from tcgetattr: %s\(\backslash\)n"}, errno, strerror(errno));
+30     \}
+31 
+32     tty->c\_cflag &= ~PARENB; \textcolor{comment}{// Clear parity bit, disabling parity (most common)}
+33     \textcolor{comment}{//tty->c\_cflag |= PARENB;  // Set parity bit, enabling parity}
+34     
+35     tty->c\_cflag &= ~CSTOPB; \textcolor{comment}{// Clear stop field, only one stop bit used in communication (most common)}
+36     \textcolor{comment}{//tty->c\_cflag |= CSTOPB;  // Set stop field, two stop bits used in communication}
+37     
+38 
+39     tty->c\_cflag &= ~CSIZE; \textcolor{comment}{// Clear all the size bits, then use one of the statements below}
+40     \textcolor{comment}{//tty->c\_cflag |= CS5; // 5 bits }
+41     \textcolor{comment}{//tty->c\_cflag |= CS6; // 6 bits}
+42     \textcolor{comment}{//tty->c\_cflag |= CS7; // 7 bits }
+43     tty->c\_cflag |= CS8; \textcolor{comment}{// 8 bits (most common)}
+44 
+45     
+46     tty->c\_cflag &= ~CRTSCTS; \textcolor{comment}{// Disable RTS/CTS hardware flow control (most common)}
+47     \textcolor{comment}{//tty->c\_cflag |= CRTSCTS;  // Enable RTS/CTS hardware flow control}
+48 
+49     tty->c\_cflag |= CREAD | CLOCAL; \textcolor{comment}{// Turn on READ & ignore ctrl lines (CLOCAL = 1)}
+50 
+51     \textcolor{comment}{//In canonical mode, input is processed when a new line character is received.}
+52     tty->c\_lflag &= ~ICANON; \textcolor{comment}{// non-canonical }
+53     
+54     \textcolor{comment}{//If this bit is set, sent characters will be echoed back.}
+55     tty->c\_lflag &= ~ECHO; \textcolor{comment}{// Disable echo}
+56     tty->c\_lflag &= ~ECHOE; \textcolor{comment}{// Disable erasure}
+57     tty->c\_lflag &= ~ECHONL; \textcolor{comment}{// Disable new-line echo}
+58 
+59     tty->c\_lflag &= ~ISIG; \textcolor{comment}{// Disable interpretation of INTR, QUIT and SUSP}
+60 
+61     tty->c\_iflag &= ~(IXON | IXOFF | IXANY); \textcolor{comment}{// Turn off s/w flow ctrl}
+62 
+63     tty->c\_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL); \textcolor{comment}{// Disable any special handling of
+       received bytes}
+64 
+65     tty->c\_oflag &= ~OPOST; \textcolor{comment}{// Prevent special interpretation of output bytes (e.g. newline chars)}
+66     tty->c\_oflag &= ~ONLCR; \textcolor{comment}{// Prevent conversion of newline to carriage return/line feed}
+67     \textcolor{comment}{// tty->c\_oflag &= ~OXTABS; // Prevent conversion of tabs to spaces (NOT PRESENT IN LINUX)}
+68     \textcolor{comment}{// tty->c\_oflag &= ~ONOEOT; // Prevent removal of C-d chars (0x004) in output (NOT PRESENT IN LINUX)}
+69     
+70     
+71   \textcolor{comment}{/*VMIN = 0, VTIME = 0: No blocking, return immediately with what is available}
+72 \textcolor{comment}{    VMIN > 0, VTIME = 0: This will make read() always wait for bytes (exactly how many is determined by
+       VMIN), so read() could block indefinitely.}
+73 \textcolor{comment}{    VMIN = 0, VTIME > 0: This is a blocking read of any number of chars with a maximum timeout (given by
+       VTIME). read() will block until either any amount of data is available, or the timeout occurs. This happens to
+       be my favourite mode (and the one I use the most).}
+74 \textcolor{comment}{    VMIN > 0, VTIME > 0: Block until either VMIN characters have been received, or VTIME after first
+       character has elapsed. Note that the timeout for VTIME does not begin until the first character is received.}
+75 \textcolor{comment}{    type of VMIN and VTIME: cc\_t (1B)*/}
+76     tty->c\_cc[VTIME] = 0; 
+77     tty->c\_cc[VMIN] = 1; \textcolor{comment}{// wait one byte}
+78     
+79     \textcolor{comment}{//B0,  B50,  B75,  B110,  B134,  B150,  B200, B300, B600, B1200, B1800, B2400, B4800, B9600, B19200,
+       B38400, B57600, B115200, B230400, B460800}
+80     \textcolor{comment}{// Set in/out baud rate to be 9600}
+81     cfsetispeed(tty, baud);
+82     cfsetospeed(tty, baud);
+83     \textcolor{comment}{//cfsetspeed(tty, B9600); //set both input and output}
+84 
+85     \textcolor{comment}{//cfsetispeed(tty, 104560); //Specifying a custom baud rate when using GNU C}
+86     \textcolor{comment}{//cfsetospeed(tty, 104560);}
+87 
+88     \textcolor{comment}{/*Other option for custom baud rate*/}
+89     \textcolor{comment}{/*}
+90 \textcolor{comment}{        // #include <termios.h> This must be removed! }
+91 \textcolor{comment}{        // Otherwise we'll get "redefinition of �struct termios�" errors}
+92 \textcolor{comment}{        #include <sys/ioctl.h> // Used for TCGETS2/TCSETS2, which is required for custom baud rates}
+93 \textcolor{comment}{        struct termios2 tty;}
+94 \textcolor{comment}{        // Read in the terminal settings using ioctl instead}
+95 \textcolor{comment}{        // of tcsetattr (tcsetattr only works with termios, not termios2)}
+96 \textcolor{comment}{        ioctl(fd, TCGETS2, tty);}
+97 \textcolor{comment}{        // Set everything but baud rate as usual}
+98 \textcolor{comment}{        // ...}
+99 \textcolor{comment}{        // ...}
+100 \textcolor{comment}{}
+101 \textcolor{comment}{        // Set custom baud rate}
+102 \textcolor{comment}{        tty->c\_cflag &= ~CBAUD;}
+103 \textcolor{comment}{        tty->c\_cflag |= CBAUDEX;}
+104 \textcolor{comment}{        // On the internet there is also talk of using the "BOTHER" macro here:}
+105 \textcolor{comment}{        // tty->c\_cflag |= BOTHER;}
+106 \textcolor{comment}{        // I never had any luck with it, so omitting in favour of using}
+107 \textcolor{comment}{        // CBAUDEX}
+108 \textcolor{comment}{        tty->c\_ispeed = 123456; // What a custom baud rate!}
+109 \textcolor{comment}{        tty->c\_ospeed = 123456;}
+110 \textcolor{comment}{}
+111 \textcolor{comment}{        // Write terminal settings to file descriptor}
+112 \textcolor{comment}{        ioctl(*serial\_port, TCSETS2, tty);}
+113 \textcolor{comment}{    */}
+114     
+115     \textcolor{comment}{// Save tty settings, also checking for error}
+116     \textcolor{keywordflow}{if} (tcsetattr(*serial\_port, TCSANOW, tty) != 0) \{
+117         printf(\textcolor{stringliteral}{"Error %i from tcsetattr: %s\(\backslash\)n"}, errno, strerror(errno));
+118     \}
+119     \textcolor{comment}{/*********/}
+120     \textcolor{comment}{/*WRITING*/}
+121     \textcolor{comment}{/*********/}
+122     \textcolor{comment}{//unsigned char msg[] = \{ 'H', 'e', 'l', 'l', 'o', '\(\backslash\)r' \};}
+123     \textcolor{comment}{//write(*serial\_port, msg, sizeof(msg));}
+124 
+125     \textcolor{comment}{/*********/}
+126     \textcolor{comment}{/*READING*/}
+127     \textcolor{comment}{/*********/}
+128       \textcolor{comment}{// Allocate memory for read buffer, set size according to your needs}
+129     \textcolor{comment}{//char read\_buf [256];}
+130     
+131     \textcolor{comment}{// Normally you wouldn't do this memset() call, but since we will just receive}
+132     \textcolor{comment}{// ASCII data for this example, we'll set everything to 0 so we can}
+133     \textcolor{comment}{// call printf() easily.}
+134     \textcolor{comment}{//memset(&read\_buf, '\(\backslash\)0', sizeof(read\_buf));}
+135     
+136     \textcolor{comment}{// Read bytes. The behaviour of read() (e.g. does it block?,}
+137     \textcolor{comment}{// how long does it block for?) depends on the configuration}
+138     \textcolor{comment}{// settings above, specifically VMIN and VTIME}
+139     \textcolor{comment}{//int num\_bytes = read(*serial\_port, &read\_buf, sizeof(read\_buf));}
+140     
+141     \textcolor{comment}{// n is the number of bytes read. n may be 0 if no bytes were received, and can also be -1 to signal an
+       error.}
+142     \textcolor{comment}{//if (num\_bytes < 0) \{}
+143     \textcolor{comment}{//  printf("Error reading: %s", strerror(errno));}
+144     \textcolor{comment}{//  return 1;}
+145     \textcolor{comment}{//\}}
+146     
+147     \textcolor{comment}{// Here we assume we received ASCII data, but you might be sending raw bytes (in that case, don't try
+       and}
+148     \textcolor{comment}{// print it to the screen like this!)}
+149     \textcolor{comment}{//printf("Read %i bytes. Received message: %s", num\_bytes, read\_buf);}
+150 
+151     \textcolor{comment}{//close(serial\_port);}
+152 
+153 \}
+\end{DoxyCode}

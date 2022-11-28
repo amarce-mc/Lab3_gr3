@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.10.5)  27 NOV 2022 21:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.10.5)  28 NOV 2022 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1206,67 +1206,232 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 141.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 18.66588pt on input line 141.
-(./files.tex
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 141.
+(./md_README.tex) [1
+
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 145.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 145.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 145.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 145.
+ [2
+
+]
+Chapter 2.
+(./annotated.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 3.
 
 
-LaTeX Warning: Reference `main_8cpp' on page 1 undefined on input line 3.
+LaTeX Warning: Reference `classparticipante' on page 3 undefined on input line 
+3.
 
-) [1
+) [3] [4
 
 ]
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 143.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 143.
- [2
+Chapter 3.
+(./files.tex
+
+LaTeX Warning: Reference `CMakeCCompilerId_8c' on page 5 undefined on input lin
+e 3.
+
+
+LaTeX Warning: Reference `CMakeCXXCompilerId_8cpp' on page 5 undefined on input
+ line 4.
+
+
+LaTeX Warning: Reference `config__tty_8cpp_8o_8d' on page 5 undefined on input 
+line 5.
+
+
+LaTeX Warning: Reference `main_8cpp_8o_8d' on page 5 undefined on input line 6.
+
+
+
+LaTeX Warning: Reference `participant_8cpp_8o_8d' on page 5 undefined on input 
+line 7.
+
+
+LaTeX Warning: Reference `lib__grupo3_8h' on page 5 undefined on input line 8.
+
+
+LaTeX Warning: Reference `tty__lib2_8h' on page 5 undefined on input line 9.
+
+
+LaTeX Warning: Reference `config__tty_8cpp' on page 5 undefined on input line 1
+0.
+
+
+LaTeX Warning: Reference `main_8cpp' on page 5 undefined on input line 11.
+
+
+LaTeX Warning: Reference `participant_8cpp' on page 5 undefined on input line 1
+2.
+
+) [5] [6
 
 ]
-Chapter 2.
-(./main_8cpp.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 3.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+Chapter 4.
+(./classparticipante.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 4.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 4.
+(Font)              scaled to size 10.79993pt on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 4.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 7.
+(Font)              scaled to size 10.79993pt on input line 7.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 10.
+
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 7.
+(Font)              scaled to size 8.99994pt on input line 10.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 34.
+(Font)              scaled to size 8.99994pt on input line 37.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 7.19995pt on input line 37.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 37.
+
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 35.
- [3] [4]) [5]
-[6
+(Font)              scaled to size 7.19995pt on input line 38.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 52.
+[7] [8]) [9] [10
+
+]
+Chapter 5.
+(./CMakeCCompilerId_8c.tex [11] [12] [13] [14]) (./CMakeCXXCompilerId_8cpp.tex
+[15] [16] [17] [18]) (./config__tty_8cpp_8o_8d.tex) (./main_8cpp_8o_8d.tex)
+(./participant_8cpp_8o_8d.tex) (./lib__grupo3_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+[19]) (./tty__lib2_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--9
+
+ []
+
+[20]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 21.
+ [21]
+Overfull \hbox (36.15553pt too wide) in paragraph at lines 97--97
+[]       \T1/pcr/m/n/7 VTIME). read() will block until either any amount of dat
+a is available, or the timeout occurs. This happens to[] 
+ []
+
+
+Overfull \hbox (27.75554pt too wide) in paragraph at lines 99--99
+[]       \T1/pcr/m/n/7 character has elapsed. Note that the timeout for VTIME d
+oes not begin until the first character is received.[][] 
+ []
+
+
+! Package inputenc Error: Unicode char � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117 ...finition of �struct termios�" errors}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117 ...finition of �struct termios�" errors}
+                                                  
+? 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22])
+(./README_8md.tex) (./config__tty_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+[23]
+Overfull \hbox (36.15553pt too wide) in paragraph at lines 92--92
+[]       \T1/pcr/m/n/7 VTIME). read() will block until either any amount of dat
+a is available, or the timeout occurs. This happens to[] 
+ []
+
+
+Overfull \hbox (27.75554pt too wide) in paragraph at lines 94--94
+[]       \T1/pcr/m/n/7 character has elapsed. Note that the timeout for VTIME d
+oes not begin until the first character is received.[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+
+! Package inputenc Error: Unicode char � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 ...finition of �struct termios�" errors}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char � (U+FFFD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 ...finition of �struct termios�" errors}
+                                                  
+? 
+) (./main_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+[25]) (./participant_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+[26]) [27] [28
 
 ]
 No file refman.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 173.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 173.
 (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 173.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 173.
 
 
 Package rerunfilecheck Warning: File `refman.out' has changed.
@@ -1275,33 +1440,39 @@ Package rerunfilecheck Warning: File `refman.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `refman.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  556090A44B2F2F088C7A6130AE471D81;2289.
+(rerunfilecheck)             After:  1E3AA526DB58FA6C241B4DF5D3B05A38;15630.
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 173.
  ) 
 Here is how much of TeX's memory you used:
- 14765 strings out of 494923
- 209226 string characters out of 6180742
- 296723 words of memory out of 5000000
- 17822 multiletter control sequences out of 15000+600000
- 50180 words of font info for 61 fonts, out of 8000000 for 9000
+ 15011 strings out of 494923
+ 215645 string characters out of 6180742
+ 303723 words of memory out of 5000000
+ 17890 multiletter control sequences out of 15000+600000
+ 58088 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,11n,92p,296b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,16n,92p,1844b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
-lvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
-8a.pfb>
-Output written on refman.pdf (10 pages, 58387 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/uc
+rro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on refman.pdf (32 pages, 133087 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
+ 439 PDF objects out of 1000 (max. 8388607)
+ 392 compressed objects within 4 object streams
+ 173 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

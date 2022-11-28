@@ -1,0 +1,151 @@
+\hypertarget{classparticipante}{}\section{participante Class Reference}
+\label{classparticipante}\index{participante@{participante}}
+
+
+{\ttfamily \#include $<$lib\+\_\+grupo3.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classparticipante_a23dad13159ab3128aaa5ff566d17651c}{participante} ()
+\item 
+\hyperlink{classparticipante_ae5622dd01c7eb4a9b5ab16416713532a}{participante} (unsigned int id, string nom)
+\item 
+void \hyperlink{classparticipante_aeba4c21aed4c6011b46b13732ccc25df}{set\+\_\+participant} (unsigned int id, string nom)
+\item 
+void \hyperlink{classparticipante_afcfca6704c1dfac469f5908b683238bc}{set\+\_\+pushed} (unsigned int cant)
+\item 
+unsigned int \hyperlink{classparticipante_a7bf312844c7814bcaaf6b20466a16283}{get\+\_\+participant\+\_\+id} ()
+\item 
+string \hyperlink{classparticipante_a00d27dd27a5bf61677c8dfc8937e1b43}{get\+\_\+nombre} ()
+\item 
+unsigned int \hyperlink{classparticipante_a5bd7015af88db27e170a724ff38148c9}{get\+\_\+pushed} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file lib\+\_\+grupo3.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparticipante_a23dad13159ab3128aaa5ff566d17651c}\label{classparticipante_a23dad13159ab3128aaa5ff566d17651c}} 
+\index{participante@{participante}!participante@{participante}}
+\index{participante@{participante}!participante@{participante}}
+\subsubsection{\texorpdfstring{participante()}{participante()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily participante\+::participante (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+6 : participant\_id(0), nombre (\textcolor{stringliteral}{""}) \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipante_ae5622dd01c7eb4a9b5ab16416713532a}\label{classparticipante_ae5622dd01c7eb4a9b5ab16416713532a}} 
+\index{participante@{participante}!participante@{participante}}
+\index{participante@{participante}!participante@{participante}}
+\subsubsection{\texorpdfstring{participante()}{participante()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily participante\+::participante (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+7 : participant\_id (\textcolor{keywordtype}{id}),nombre(nom)\{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classparticipante_a00d27dd27a5bf61677c8dfc8937e1b43}\label{classparticipante_a00d27dd27a5bf61677c8dfc8937e1b43}} 
+\index{participante@{participante}!get\+\_\+nombre@{get\+\_\+nombre}}
+\index{get\+\_\+nombre@{get\+\_\+nombre}!participante@{participante}}
+\subsubsection{\texorpdfstring{get\+\_\+nombre()}{get\_nombre()}}
+{\footnotesize\ttfamily string participante\+::get\+\_\+nombre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{
+24         \textcolor{keywordflow}{return} nombre;
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipante_a7bf312844c7814bcaaf6b20466a16283}\label{classparticipante_a7bf312844c7814bcaaf6b20466a16283}} 
+\index{participante@{participante}!get\+\_\+participant\+\_\+id@{get\+\_\+participant\+\_\+id}}
+\index{get\+\_\+participant\+\_\+id@{get\+\_\+participant\+\_\+id}!participante@{participante}}
+\subsubsection{\texorpdfstring{get\+\_\+participant\+\_\+id()}{get\_participant\_id()}}
+{\footnotesize\ttfamily unsigned int participante\+::get\+\_\+participant\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+19 \{
+20         \textcolor{keywordflow}{return} participant\_id;
+21 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipante_a5bd7015af88db27e170a724ff38148c9}\label{classparticipante_a5bd7015af88db27e170a724ff38148c9}} 
+\index{participante@{participante}!get\+\_\+pushed@{get\+\_\+pushed}}
+\index{get\+\_\+pushed@{get\+\_\+pushed}!participante@{participante}}
+\subsubsection{\texorpdfstring{get\+\_\+pushed()}{get\_pushed()}}
+{\footnotesize\ttfamily unsigned int participante\+::get\+\_\+pushed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+27 \{
+28         \textcolor{keywordflow}{return} veces\_pushed;
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipante_aeba4c21aed4c6011b46b13732ccc25df}\label{classparticipante_aeba4c21aed4c6011b46b13732ccc25df}} 
+\index{participante@{participante}!set\+\_\+participant@{set\+\_\+participant}}
+\index{set\+\_\+participant@{set\+\_\+participant}!participante@{participante}}
+\subsubsection{\texorpdfstring{set\+\_\+participant()}{set\_participant()}}
+{\footnotesize\ttfamily void participante\+::set\+\_\+participant (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{string}]{nom }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+10 \{
+11         participant\_id = id;
+12         nombre = nom;
+13 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipante_afcfca6704c1dfac469f5908b683238bc}\label{classparticipante_afcfca6704c1dfac469f5908b683238bc}} 
+\index{participante@{participante}!set\+\_\+pushed@{set\+\_\+pushed}}
+\index{set\+\_\+pushed@{set\+\_\+pushed}!participante@{participante}}
+\subsubsection{\texorpdfstring{set\+\_\+pushed()}{set\_pushed()}}
+{\footnotesize\ttfamily void participante\+::set\+\_\+pushed (\begin{DoxyParamCaption}\item[{unsigned int}]{cant }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+15 \{
+16         veces\_pushed=cant;
+17 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{lib__grupo3_8h}{lib\+\_\+grupo3.\+h}\item 
+src/\hyperlink{participant_8cpp}{participant.\+cpp}\end{DoxyCompactItemize}

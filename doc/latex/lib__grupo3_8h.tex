@@ -1,0 +1,55 @@
+\hypertarget{lib__grupo3_8h}{}\section{include/lib\+\_\+grupo3.h File Reference}
+\label{lib__grupo3_8h}\index{include/lib\+\_\+grupo3.\+h@{include/lib\+\_\+grupo3.\+h}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classparticipante}{participante}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{lib__grupo3_8h_af8cab4f9b106bfecdd0d4440447862b2}{comunicacion\+\_\+serial} (float t1, float t2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lib__grupo3_8h_af8cab4f9b106bfecdd0d4440447862b2}\label{lib__grupo3_8h_af8cab4f9b106bfecdd0d4440447862b2}} 
+\index{lib\+\_\+grupo3.\+h@{lib\+\_\+grupo3.\+h}!comunicacion\+\_\+serial@{comunicacion\+\_\+serial}}
+\index{comunicacion\+\_\+serial@{comunicacion\+\_\+serial}!lib\+\_\+grupo3.\+h@{lib\+\_\+grupo3.\+h}}
+\subsubsection{\texorpdfstring{comunicacion\+\_\+serial()}{comunicacion\_serial()}}
+{\footnotesize\ttfamily int comunicacion\+\_\+serial (\begin{DoxyParamCaption}\item[{float}]{t1,  }\item[{float}]{t2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file participant.\+cpp.
+
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keyword}{struct }termios tty;
+36         \textcolor{keywordtype}{int} serial\_port;
+37     \hyperlink{tty__lib2_8h_af4b26b32c3c509fa307419652482c659}{config\_tty} (\textcolor{stringliteral}{"/dev/ttyS0"}, &tty, B9600, &serial\_port);
+38     \textcolor{keywordtype}{int} read\_buf;
+39         \textcolor{keywordtype}{int} num\_bytes;
+40 
+41     sleep (2); 
+42     cout<<\textcolor{stringliteral}{"\(\backslash\)n Preparados ..."}<<endl;
+43         write(serial\_port, \textcolor{stringliteral}{"s"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+44         sleep(t1);
+45 
+46     cout<<\textcolor{stringliteral}{"\(\backslash\)n Comience a pulsar"}<<endl;
+47         
+48     write(serial\_port, \textcolor{stringliteral}{"r"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+49     sleep(t2);
+50     
+51     cout<<\textcolor{stringliteral}{"\(\backslash\)n Acabo el tiempo."}<<endl;
+52     write(serial\_port, \textcolor{stringliteral}{"S"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+53   
+54     num\_bytes = read(serial\_port, &read\_buf, \textcolor{keyword}{sizeof}(read\_buf));
+55     close(serial\_port);
+56     \textcolor{keywordflow}{return} read\_buf;
+57 \}
+\end{DoxyCode}
